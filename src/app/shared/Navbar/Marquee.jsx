@@ -13,7 +13,7 @@ const Marquee = async() => {
             <div className="font-bold mx-2">সর্বশেষ</div>
             <MarqueeText direction="right" duration={11} className="text-sm text-grey-100 sm:text-base md:text-sm">
             {
-                headline.map((h,i) => <Link key={i} href={h.link} target="_blank">
+                headline.map((h,i) => <Link key={i} href={`/pages/Details/${h.id}`}>
                     <span>
                     <span className="hover:underline">
                         {h.title}

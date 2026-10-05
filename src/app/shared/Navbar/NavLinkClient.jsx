@@ -28,15 +28,13 @@ const NavLinkClient = ({ filterNav }) => {
 
                 {/* Categories */}
                 {filterNav.map((n) => {
-                    const slug = normalizePath(n.slug.startsWith("/")
-                        ? n.slug
-                        : `/${n.slug}`);
-                    const isActive = currentPath === slug;
+                    const href = `/pages/Category/${n.slug}`;
+                    const isActive = currentPath === normalizePath(href);
 
                     return (
                         <Link
                             key={n.slug}
-                            href={slug}
+                            href={href}
                             aria-current={isActive ? 'page' : undefined}
                             className={`shrink-0 transition-colors duration-200 ${
                                 isActive

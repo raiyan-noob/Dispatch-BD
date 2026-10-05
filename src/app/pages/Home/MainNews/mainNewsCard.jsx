@@ -27,7 +27,7 @@ const MainCard = ({ news, snews }) => {
 
                 {/* Featured News */}
                 <div className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl lg:col-span-2">
-                    <Link href={firstnews.link} target="_blank">
+                    <Link href={`/pages/Details/${firstnews.id}`}>
                     <figure className="relative h-60 w-full overflow-hidden sm:h-72 md:h-96">
                         <Image
                             src={firstnews.imageUrl}
@@ -74,7 +74,7 @@ const MainCard = ({ news, snews }) => {
                                 className="group cursor-pointer py-4 first:pt-5 last:pb-5"
                                 key={index}
                             >
-                                    <Link href={n.link} target="_blank">
+                                    <Link href={`/pages/Details/${n.id}`}>
                                 <p className="mb-1 text-xs font-semibold text-blue-600 sm:text-sm">
                                     {n.category}
                                 </p>
@@ -125,7 +125,7 @@ const MainCard = ({ news, snews }) => {
                             })}`;
 
                             return (
-                                <Link key={i} href = {n.link} target="_blank">
+                                <Link key={i} href = {`/pages/Details/${n.id}`}>
                                 <div
                                     
                                     className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"

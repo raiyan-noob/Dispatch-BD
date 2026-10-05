@@ -1,6 +1,7 @@
 import React from 'react';
 import MainCard from './MainNews/mainNewsCard';
 import OtherCard from './OtherNews/otherCard';
+import LatestNews from './LatestNews/latest';
 const News = async() => {
     const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
     const data = await res.json();
@@ -30,7 +31,7 @@ const News = async() => {
 
         {/* SIDE CONTENT */}
         <div className="w-full">
-            {/* Your side content will go here */}
+            <LatestNews />
         </div>
 
     </div>

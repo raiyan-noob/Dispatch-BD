@@ -47,7 +47,7 @@ const OtherCard = ({ news }) => {
                                         })}`;
 
                                         return (
-                                            <Link key={j} href = {n.link} target="_blank">
+                                            <Link key={j} href = {`/pages/Details/${n.id}`}>
                                             <article
                                                 
                                                 className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
