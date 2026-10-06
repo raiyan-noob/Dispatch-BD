@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
     const date = new Date().toLocaleDateString("bn-BD", {
@@ -35,13 +36,15 @@ const Header = () => {
 
                 {/* Authentication Buttons */}
                 <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2">
-                    <button className="btn btn-xs border-gray-300 bg-white px-2 text-[10px] text-gray-700 hover:border-slate-900 hover:bg-slate-900 hover:text-white sm:btn-sm sm:px-3 sm:text-xs md:btn-md md:text-sm">
+                    <Link href="/Sign-in"><button className="btn btn-xs border-gray-300 bg-white px-2 text-[10px] text-gray-700 hover:border-slate-900 hover:bg-slate-900 hover:text-white sm:btn-sm sm:px-3 sm:text-xs md:btn-md md:text-sm">
                         সাইন ইন
                     </button>
-
+                    </Link>
+                    <Link href="/Sign-up">
                     <button className="btn btn-xs border-0 bg-blue-600 px-2 text-[10px] text-white shadow-sm hover:bg-blue-700 sm:btn-sm sm:px-3 sm:text-xs md:btn-md md:text-sm">
                         সাইন আপ
                     </button>
+                    </Link>
                 </div>
 
             </div>
