@@ -1,47 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dispatch BD
+
+Dispatch BD is a modern news and media web application built with Next.js, designed to deliver a polished reading experience with secure authentication, responsive design, and category-based content browsing. The platform combines a rich news interface with user account functionality, including email/password sign-up and Google OAuth login, making it suitable for a real-world digital publishing workflow.
+
+## Project Description
+
+Dispatch BD is a content-focused web app designed for news readers who want quick access to fresh updates, category-based stories, and a smooth digital experience. The application includes:
+
+- A modern homepage with featured and latest news sections
+- Responsive layouts for mobile and desktop devices
+- News category and detail views
+- User authentication using Better Auth
+- MongoDB-backed user and session storage
+- Social login with Google for convenient access
+
+This project demonstrates a practical combination of frontend development, authentication, and database integration in a production-style Next.js application.
+
+## Features
+
+- Secure user registration and login
+- Email/password authentication
+- Google social sign-in
+- Personalized user profile experience
+- Modern responsive UI powered by Tailwind CSS
+- News feed with featured stories and sections
+- Built using the App Router in Next.js
+- Easy deployment-ready configuration for production environments
+
+## Technologies Used
+
+- Next.js 16
+- React 19
+- JavaScript
+- Tailwind CSS
+- DaisyUI
+- Better Auth
+- MongoDB
+- @better-auth/mongo-adapter
+- Resend
+- ESLint
+- Vercel-ready deployment structure
+
+## Project Structure
+
+```bash
+dispatchbd/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── Sign-in/
+│   │   ├── Sign-up/
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   └── page.js
+│   └── ...
+├── lib/
+│   ├── auth.js
+│   └── auth-client.js
+├── public/
+├── .env
+├── .gitignore
+├── package.json
+├── next.config.mjs
+├── eslint.config.mjs
+├── postcss.config.mjs
+├── jsconfig.json
+├── README.md
+└── package-lock.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js 18+ or newer
+- npm
+- MongoDB instance or MongoDB Atlas connection
+- Google OAuth credentials (for social login)
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd dispatchbd
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file in the root directory and add the required environment variables:
+
+```env
+MONGODB_URL="your_mongodb_connection_string"
+BETTER_AUTH_SECRET="your_secure_secret"
+BETTER_AUTH_URL="http://localhost:3000"
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
+```
+
+4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and visit:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+```bash
+npm run dev     # Start the development server
+npm run build   # Create a production build
+npm run start   # Run the production build
+npm run lint    # Run ESLint checks
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project uses the following environment variables for authentication and database setup:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `MONGODB_URL` — MongoDB connection string for user and session storage
+- `BETTER_AUTH_SECRET` — Secret key used by Better Auth
+- `BETTER_AUTH_URL` — Application base URL for auth callbacks
+- `GOOGLE_CLIENT_ID` — Google OAuth client ID
+- `GOOGLE_CLIENT_SECRET` — Google OAuth client secret
 
-## Deploy on Vercel
+> Keep all secrets out of version control. Use environment variables in your local setup or deployment platform.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed and developed by [raiyan-noob](https://github.com/raiyan-noob).
 
-### Configure authentication on Vercel
+## Notes
 
-In the Vercel project, add these environment variables under **Settings → Environment Variables**, and enable them for each environment where the app will run:
+This project was developed as a full-stack authentication and frontend application exercise, combining secure access control with a modern editorial-style homepage. It is designed to be easy to extend with additional features such as article management, admin dashboards, user roles, and advanced content moderation.
 
-- `MONGODB_URL` — MongoDB connection string for the authentication database.
-- `BETTER_AUTH_SECRET` — a strong, private secret used by Better Auth.
-- `BETTER_AUTH_URL` — the canonical origin of the deployed app, such as `https://your-domain.example`.
-- `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` — OAuth credentials used by Google sign-in.
-
-Redeploy after adding or changing environment variables. Authentication initializes on the first auth or protected-page request, so the build can complete without database credentials, but authentication requests require `MONGODB_URL` and the relevant auth credentials to be configured. Keep secrets in Vercel's environment settings; never commit them to the repository.
