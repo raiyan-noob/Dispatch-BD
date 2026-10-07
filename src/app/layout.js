@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 const notoBengali = Noto_Sans_Bengali({
-  variable: "--font-geist-mono",
+  variable: "--font-noto-bengali",
   subsets: ["latin", "bengali"],
 });
 

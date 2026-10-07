@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { authClient } from '../../../lib/auth-client';
-import Profile from '../pages/profile/page';
 const UserInfo = () => {
 
+    const router = useRouter();
     const { data: session } = authClient.useSession();
     const user = session?.user;
 
@@ -13,6 +14,8 @@ const UserInfo = () => {
 
     const handleSignOut = async () => {
         await authClient.signOut();
+        router.replace('/');
+        router.refresh();
     };
 
     return (
@@ -100,5 +103,4 @@ const UserInfo = () => {
 };
 
 export default UserInfo;
-
 
