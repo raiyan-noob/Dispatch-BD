@@ -63,6 +63,7 @@ const SignUp = () => {
                 name: formValues.name,
                 email: formValues.email,
                 password: formValues.password,
+                rememberMe: false,
                 callbackURL: "/"
             });
 

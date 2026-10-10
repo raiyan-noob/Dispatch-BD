@@ -3,7 +3,9 @@ import MarqueeText from "react-marquee-text"
 import "react-marquee-text/dist/styles.css"
 import Link from 'next/link';
 const Marquee = async() => {
-    const res= await fetch("https://news-api-v2.vercel.app/api/news?limit=25")
+    const res = await fetch("https://news-api-v2.vercel.app/api/news?limit=25", {
+        cache: "no-store",
+    });
     const data = await res.json();
     const headline= data.data;
      

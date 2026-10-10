@@ -56,7 +56,7 @@ const SignIn = () => {
             const { error } = await authClient.signIn.email({
                 email,
                 password,
-                rememberMe: true,
+                rememberMe: false,
                 callbackURL: '/',
             });
 

@@ -3,7 +3,9 @@ import React from 'react';
 
 const LatestNews = async () => {
 
-    const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read");
+    const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read", {
+        cache: "no-store",
+    });
     const data = await res.json();
     const news = data.data;
 

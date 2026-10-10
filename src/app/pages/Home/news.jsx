@@ -3,7 +3,9 @@ import MainCard from './MainNews/mainNewsCard';
 import OtherCard from './OtherNews/otherCard';
 import LatestNews from './LatestNews/latest';
 const News = async() => {
-    const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
+    const res = await fetch("https://news-api-v2.vercel.app/api/news/sections", {
+        cache: "no-store",
+    });
     const data = await res.json();
     const section = data.data;
     const main = section[0].articles;
