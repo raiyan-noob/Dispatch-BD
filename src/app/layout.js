@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "./shared/Navbar/Navbar";
 import Footer from "./shared/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-        </body>
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
